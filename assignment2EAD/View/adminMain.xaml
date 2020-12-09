@@ -1,0 +1,60 @@
+﻿<Window x:Class="assignment2EAD.View.adminMain"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:assignment2EAD.View"
+        mc:Ignorable="d"
+        Title="adminMain" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Content="ADMIN DASHBOARD" FontSize="35" Grid.ColumnSpan="5" HorizontalContentAlignment="Center" FontWeight="Bold"></Label>
+
+        <Label Grid.Row="1" Content="Add New Product" FontSize="25" Grid.ColumnSpan="2" HorizontalAlignment="Center"></Label>
+            <Label Content="Product ID" FontSize="20" Grid.Row="2" Grid.Column="0"></Label>
+        <TextBox Height="30" MinWidth="80" Grid.Row="2" Grid.Column="1" FontSize="20"></TextBox>
+        
+        
+            <Label Grid.Row="3" Grid.Column="0" Content="Product Name" FontSize="20"></Label>
+        <TextBox Height="30" Grid.Row="3" Grid.Column="1" MinWidth="80" FontSize="20"></TextBox>
+
+
+        <Label Grid.Row="4" Grid.Column="0" Content="Price" FontSize="20"></Label>
+        <TextBox Height="30" Grid.Row="4" Grid.Column="1" MinWidth="80" FontSize="20"></TextBox>
+
+
+        <Label Grid.Row="5" Grid.Column="0" Content="Quantity" FontSize="20"></Label>
+        <TextBox Height="30" Grid.Row="5" Grid.Column="1" MinWidth="80" FontSize="20"></TextBox>
+
+        <Button Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="150" Content="Add Product" Height="35" FontSize="20" FontWeight="Bold"></Button>
+
+        <Button Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="5" HorizontalAlignment="Center" Width="150" Content="PRODUCTS" Height="35" FontSize="20" FontWeight="Bold"></Button>
+        <Button Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="5" HorizontalAlignment="Center" Width="150" Content="LOG OUT" Height="35" FontSize="20" FontWeight="Bold"></Button>
+
+        <Button Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="150" Content="DELETE" Height="35" FontSize="20" FontWeight="Bold"></Button>
+        <Label Content="Delete Product" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="25" Grid.Row="1"></Label>
+        <Label Content="Enter product ID to delete" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Left" FontSize="17" Grid.Row="2"></Label>
+        <WrapPanel Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="2" VerticalAlignment="Center" Grid.Row="3">
+        <Label Content="ID  "  HorizontalAlignment="Center" FontSize="20"></Label>
+            <TextBox MinWidth="150" FontSize="20" Height="30"></TextBox>
+        </WrapPanel>
+    </Grid>
+</Window>
