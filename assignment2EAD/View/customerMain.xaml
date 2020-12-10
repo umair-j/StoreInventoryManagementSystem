@@ -7,6 +7,45 @@
         mc:Ignorable="d"
         Title="customerMain" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label FontWeight="Bold" FontSize="60" Content="CUSTOMER" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2" Grid.ColumnSpan="2"></Label>
+        <Label Grid.Row="2" FontSize="30" Content="LOGIN" FontWeight="Bold" HorizontalAlignment="Center"></Label>
+        <Label Grid.Row="2" Grid.Column="1" FontSize="30" Content="SIGNUP" FontWeight="Bold" HorizontalAlignment="Center"></Label>
+        <WrapPanel Grid.Row="3">
+            <Label Content="UserName " FontSize="20" VerticalAlignment="Center"></Label>
+            <TextBox FontSize="20" VerticalAlignment="Center" MinWidth="150"></TextBox>
+        </WrapPanel>
+        <WrapPanel Grid.Row="3" Grid.Column="1">
+            <Label Content="UserName " FontSize="20" VerticalAlignment="Center"></Label>
+            <TextBox FontSize="20" VerticalAlignment="Center" MinWidth="150"></TextBox>
+        </WrapPanel>
+        <WrapPanel Grid.Row="4" Grid.Column="0">
+            <Label Content="Password   " FontSize="20" VerticalAlignment="Center"></Label>
+            <TextBox FontSize="20" VerticalAlignment="Center" MinWidth="150"></TextBox>
+        </WrapPanel>
+        <WrapPanel Grid.Row="4" Grid.Column="1">
+            <Label Content="Password   " FontSize="20" VerticalAlignment="Center"></Label>
+            <TextBox FontSize="20" VerticalAlignment="Center" MinWidth="150"></TextBox>
+        </WrapPanel>
+        <WrapPanel Grid.Row="5" Grid.Column="1">
+            <Label Content="Phone NO " FontSize="20" VerticalAlignment="Center"></Label>
+            <TextBox FontSize="20" VerticalAlignment="Center" MinWidth="155"></TextBox>
+        </WrapPanel>
+        <Button Grid.Row="7" Grid.Column="0" Width="150" Height="35" Content="LOGIN" FontSize="15" FontWeight="Bold"></Button>
+        <Button Grid.Row="7" Grid.Column="1" Width="150" Height="35" Content="SIGNUP" FontSize="15" FontWeight="Bold"></Button>
     </Grid>
 </Window>

@@ -13,18 +13,13 @@ using System.Windows.Shapes;
 namespace assignment2EAD.View
 {
     /// <summary>
-    /// Interaction logic for adminMain.xaml
+    /// Interaction logic for addToCartWindow.xaml
     /// </summary>
-    public partial class adminMain : Window
+    public partial class addToCartWindow : Window
     {
-        public adminMain()
+        public addToCartWindow()
         {
             InitializeComponent();
-        }
-
-        private void logoutBtn_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }
