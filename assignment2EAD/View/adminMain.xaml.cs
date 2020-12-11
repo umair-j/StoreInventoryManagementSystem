@@ -30,6 +30,10 @@ namespace assignment2EAD.View
             this.Close();
         }
 
-        
+        private void productsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            allProductsWindow window = new allProductsWindow(this);
+            window.Show();
+        }
     }
 }

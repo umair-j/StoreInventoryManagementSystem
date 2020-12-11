@@ -17,7 +17,7 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -46,16 +46,16 @@
 
         <Button Command="{Binding addProductCommand}" Name="addProductBtn" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="150" Content="Add Product" Height="35" FontSize="20" FontWeight="Bold"></Button>
 
-        <Button Command="{Binding cmd2}" Name="productsBtn" Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="5" HorizontalAlignment="Center" Width="150" Content="PRODUCTS" Height="35" FontSize="20" FontWeight="Bold"></Button>
+        <Button Command="{Binding showProductCommand}" Name="productsBtn" Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="5" HorizontalAlignment="Center" Width="150" Content="PRODUCTS" Height="35" FontSize="20" FontWeight="Bold" Click="productsBtn_Click"></Button>
         <Button Name="logoutBtn" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="5" HorizontalAlignment="Center" Width="150" Content="LOG OUT" Height="35" FontSize="20" FontWeight="Bold" Click="logoutBtn_Click"></Button>
 
-        <Button Name="deleteBtn" Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="150" Content="DELETE" Height="35" FontSize="20" FontWeight="Bold"></Button>
+        <Button Command="{Binding deleteProductCommand}" Name="deleteBtn" Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="150" Content="DELETE" Height="35" FontSize="20" FontWeight="Bold"></Button>
         <Label Content="Delete Product" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="25" Grid.Row="1"></Label>
         <Label Content="Enter product ID to delete" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Left" FontSize="17" Grid.Row="2"></Label>
         <WrapPanel  Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="2" VerticalAlignment="Center" Grid.Row="3">
         <Label Content="ID  "  HorizontalAlignment="Center" FontSize="20"></Label>
-            <TextBox Name="deleteProductId" MinWidth="150" FontSize="20" Height="30"></TextBox>
+            <TextBox Text="{Binding deleteId, UpdateSourceTrigger=PropertyChanged}" Name="deleteProductId" MinWidth="150" FontSize="20" Height="30"></TextBox>
         </WrapPanel>
-        <ListBox Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3" ItemsSource="{Binding list}" DisplayMemberPath="ProductName"></ListBox>
+        
     </Grid>
 </Window>

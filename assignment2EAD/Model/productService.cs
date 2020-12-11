@@ -19,6 +19,11 @@ namespace assignment2EAD.Model
         {
             productList.Add(p);
         }
+        public bool deleteProduct(product p)
+        {
+            bool success = productList.Remove(p);
+            return success;
+        }
         public ObservableCollection<product> getAllProducts()
         {
             return productList;
