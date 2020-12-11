@@ -1,4 +1,5 @@
-﻿using System;
+﻿using assignment2EAD.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -17,14 +18,18 @@ namespace assignment2EAD.View
     /// </summary>
     public partial class adminMain : Window
     {
+        
         public adminMain()
         {
             InitializeComponent();
+            this.DataContext = new adminMainViewModel();
         }
 
         private void logoutBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
+
+        
     }
 }

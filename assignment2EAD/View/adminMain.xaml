@@ -17,7 +17,7 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
-            
+            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -30,23 +30,23 @@
 
         <Label Grid.Row="1" Content="Add New Product" FontSize="25" Grid.ColumnSpan="2" HorizontalAlignment="Center"></Label>
             <Label VerticalContentAlignment="Center" Content="Product ID" FontSize="20" Grid.Row="2" Grid.Column="0"></Label>
-        <TextBox Name="productIdBox" Height="30" MinWidth="80" Grid.Row="2" Grid.Column="1" FontSize="20"></TextBox>
+        <TextBox Text="{Binding id}" Name="productIdBox" Height="30" MinWidth="80" Grid.Row="2" Grid.Column="1" FontSize="20"></TextBox>
 
 
         <Label VerticalContentAlignment="Center" Grid.Row="3" Grid.Column="0" Content="Product Name" FontSize="20"></Label>
-        <TextBox Name="productNameBox" Height="30" Grid.Row="3" Grid.Column="1" MinWidth="80" FontSize="20"></TextBox>
+        <TextBox Text="{Binding name}" Name="productNameBox" Height="30" Grid.Row="3" Grid.Column="1" MinWidth="80" FontSize="20"></TextBox>
 
 
         <Label VerticalContentAlignment="Center" Grid.Row="4" Grid.Column="0" Content="Price" FontSize="20"></Label>
-        <TextBox Name="priceBox" Height="30" Grid.Row="4" Grid.Column="1" MinWidth="80" FontSize="20"></TextBox>
+        <TextBox Text="{Binding price}" Name="priceBox" Height="30" Grid.Row="4" Grid.Column="1" MinWidth="80" FontSize="20"></TextBox>
 
 
         <Label VerticalContentAlignment="Center" Grid.Row="5" Grid.Column="0" Content="Quantity" FontSize="20"></Label>
-        <TextBox Name="quantityBox" Height="30" Grid.Row="5" Grid.Column="1" MinWidth="80" FontSize="20"></TextBox>
+        <TextBox Text="{Binding quantity}" Name="quantityBox" Height="30" Grid.Row="5" Grid.Column="1" MinWidth="80" FontSize="20"></TextBox>
 
-        <Button Name="addProductBtn" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="150" Content="Add Product" Height="35" FontSize="20" FontWeight="Bold"></Button>
+        <Button Command="{Binding addProductCommand}" Name="addProductBtn" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="150" Content="Add Product" Height="35" FontSize="20" FontWeight="Bold"></Button>
 
-        <Button Name="productsBtn" Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="5" HorizontalAlignment="Center" Width="150" Content="PRODUCTS" Height="35" FontSize="20" FontWeight="Bold"></Button>
+        <Button Command="{Binding cmd2}" Name="productsBtn" Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="5" HorizontalAlignment="Center" Width="150" Content="PRODUCTS" Height="35" FontSize="20" FontWeight="Bold"></Button>
         <Button Name="logoutBtn" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="5" HorizontalAlignment="Center" Width="150" Content="LOG OUT" Height="35" FontSize="20" FontWeight="Bold" Click="logoutBtn_Click"></Button>
 
         <Button Name="deleteBtn" Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="150" Content="DELETE" Height="35" FontSize="20" FontWeight="Bold"></Button>
@@ -56,5 +56,6 @@
         <Label Content="ID  "  HorizontalAlignment="Center" FontSize="20"></Label>
             <TextBox Name="deleteProductId" MinWidth="150" FontSize="20" Height="30"></TextBox>
         </WrapPanel>
+        <ListBox Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3" ItemsSource="{Binding list}" DisplayMemberPath="ProductName"></ListBox>
     </Grid>
 </Window>
