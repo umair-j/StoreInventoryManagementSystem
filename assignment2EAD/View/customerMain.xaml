@@ -27,25 +27,25 @@
         <Label Grid.Row="2" Grid.Column="1" FontSize="30" Content="SIGNUP" FontWeight="Bold" HorizontalAlignment="Center"></Label>
         <WrapPanel Grid.Row="3">
             <Label Content="UserName " FontSize="20" VerticalAlignment="Center"></Label>
-            <TextBox FontSize="20" VerticalAlignment="Center" MinWidth="150"></TextBox>
+            <TextBox Text="{Binding Username1}" FontSize="20" VerticalAlignment="Center" MinWidth="150"></TextBox>
         </WrapPanel>
         <WrapPanel Grid.Row="3" Grid.Column="1">
             <Label Content="UserName " FontSize="20" VerticalAlignment="Center"></Label>
-            <TextBox FontSize="20" VerticalAlignment="Center" MinWidth="150"></TextBox>
+            <TextBox Text="{Binding Username2}" FontSize="20" VerticalAlignment="Center" MinWidth="150"></TextBox>
         </WrapPanel>
         <WrapPanel Grid.Row="4" Grid.Column="0">
             <Label Content="Password   " FontSize="20" VerticalAlignment="Center"></Label>
-            <TextBox FontSize="20" VerticalAlignment="Center" MinWidth="150"></TextBox>
+            <TextBox Text="{Binding Password1}" FontSize="20" VerticalAlignment="Center" MinWidth="150"></TextBox>
         </WrapPanel>
         <WrapPanel Grid.Row="4" Grid.Column="1">
             <Label Content="Password   " FontSize="20" VerticalAlignment="Center"></Label>
-            <TextBox FontSize="20" VerticalAlignment="Center" MinWidth="150"></TextBox>
+            <TextBox Text="{Binding Password2}" FontSize="20" VerticalAlignment="Center" MinWidth="150"></TextBox>
         </WrapPanel>
         <WrapPanel Grid.Row="5" Grid.Column="1">
             <Label Content="Phone NO " FontSize="20" VerticalAlignment="Center"></Label>
-            <TextBox FontSize="20" VerticalAlignment="Center" MinWidth="155"></TextBox>
+            <TextBox Text="{Binding PhoneNumber}" FontSize="20" VerticalAlignment="Center" MinWidth="155"></TextBox>
         </WrapPanel>
-        <Button Grid.Row="7" Grid.Column="0" Width="150" Height="35" Content="LOGIN" FontSize="15" FontWeight="Bold"></Button>
-        <Button Grid.Row="7" Grid.Column="1" Width="150" Height="35" Content="SIGNUP" FontSize="15" FontWeight="Bold"></Button>
+        <Button Command="{Binding signInCommand}" Grid.Row="7" Grid.Column="0" Width="150" Height="35" Content="LOGIN" FontSize="15" FontWeight="Bold"></Button>
+        <Button Command="{Binding signUpCommand}" Grid.Row="7" Grid.Column="1" Width="150" Height="35" Content="SIGNUP" FontSize="15" FontWeight="Bold"></Button>
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using assignment2EAD.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -20,6 +21,7 @@ namespace assignment2EAD.View
         public customerMain()
         {
             InitializeComponent();
+            this.DataContext = new customerMainViewModel();
         }
     }
 }
