@@ -7,10 +7,12 @@ namespace assignment2EAD.Model
 {
     class product : INotifyPropertyChanged
     {
+        //product details
         private string productid;
         private string productname;
         private int price;
         private int quantity;
+        //detail getter setters
         public string ProductID {
             get { return productid; }
             set { productid = value; onPropertyChanged(ProductID); }
@@ -42,8 +44,9 @@ namespace assignment2EAD.Model
                 onPropertyChanged(Quantity.ToString());
             }
         }
-
+        //property change event
         public event PropertyChangedEventHandler PropertyChanged;
+        //function to fire event
         public void onPropertyChanged(string propName)
         {
             if (PropertyChanged != null)

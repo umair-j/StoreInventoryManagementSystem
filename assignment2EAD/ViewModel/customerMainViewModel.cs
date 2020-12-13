@@ -19,7 +19,7 @@ namespace assignment2EAD.ViewModel
         public string Password1 { get; set; }
         public string Username2 { get; set; }
         public string Password2 { get; set; }
-        public int PhoneNumber { get; set; }
+        public long PhoneNumber { get; set; }
         public ObservableCollection<customer> list;
         public customerMainViewModel()
         {
@@ -36,7 +36,7 @@ namespace assignment2EAD.ViewModel
             bool allow = false;
             foreach (customer cstmr in list)
             {
-                if (cstmr.Username == Username2 && cstmr.Password==Password2)
+                if (cstmr.Username == Username1 && cstmr.Password==Password1)
                 {
                     MessageBox.Show("Welcome User");
                     allow = true;

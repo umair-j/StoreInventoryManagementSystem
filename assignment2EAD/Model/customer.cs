@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace assignment2EAD.Model
 {
-    class customer
+
+    class customer : INotifyPropertyChanged
     {
+        //customer details
         private string username;
         private string password;
-        private int phonenumber;
+        private long phonenumber;
+        //details' getter setters
         public string Username
         {
             get
@@ -18,6 +22,7 @@ namespace assignment2EAD.Model
             set
             {
                 username = value;
+                onPropertyChanged(Username);
             }
         }
         public string Password
@@ -29,9 +34,10 @@ namespace assignment2EAD.Model
             set
             {
                 password = value;
+                onPropertyChanged(Password);
             }
         }
-        public int Phonenumber
+        public long Phonenumber
         {
             get
             {
@@ -40,8 +46,18 @@ namespace assignment2EAD.Model
             set
             {
                 phonenumber = value;
+                onPropertyChanged(Phonenumber.ToString());
             }
         }
-
+        //property change event
+        public event PropertyChangedEventHandler PropertyChanged;
+        //function to call event in case of property change
+        public void onPropertyChanged(string propName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propName));
+            }
+        }
     }
 }

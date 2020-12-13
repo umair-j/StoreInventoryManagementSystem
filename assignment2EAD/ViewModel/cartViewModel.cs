@@ -43,7 +43,7 @@ namespace assignment2EAD.ViewModel
         }
 
         public void finish(object obj)
-        {
+        {   
             ObservableCollection<product> list = new ObservableCollection<product>();
             foreach(product p in totalList)
             {
@@ -51,9 +51,10 @@ namespace assignment2EAD.ViewModel
                 {
                     if(q == p)
                     {
-                        p.Quantity -= q.Quantity;
-                        if (p.Quantity > 0)
+                        
+                        if (p.Quantity-q.Quantity > 0)
                         {
+                            p.Quantity -= q.Quantity;
                             list.Add(q);
                         }
                     }
