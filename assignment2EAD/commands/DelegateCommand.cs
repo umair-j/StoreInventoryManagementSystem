@@ -5,8 +5,10 @@ using System.Windows.Input;
 
 namespace assignment2EAD.commands
 {
+    //implementing ICommand interface to remove repetition of command classes
     class DelegateCommand : ICommand
     {
+        //change event handler
         public event EventHandler CanExecuteChanged
         {
             add
