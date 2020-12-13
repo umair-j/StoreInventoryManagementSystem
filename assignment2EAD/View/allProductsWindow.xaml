@@ -7,38 +7,13 @@
         mc:Ignorable="d"
         Title="allProductsWindow" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-           
-        </Grid.RowDefinitions>
-        <Label Content="Name" Grid.Row="0" Grid.Column="0"></Label>
-        <Label Content="ID" Grid.Row="0" Grid.Column="1"></Label>
-        <Label Content="Price" Grid.Row="0" Grid.Column="2"></Label>
-        <Label Content="Quantity" Grid.Row="0" Grid.Column="3"></Label>
-        <ListBox Grid.Column="0" Grid.Row="1" Grid.RowSpan="15" ItemsSource="{Binding list}" DisplayMemberPath="ProductName" FontSize="40"></ListBox>
-        <ListBox Grid.Column="1" Grid.Row="1" Grid.RowSpan="15" ItemsSource="{Binding list}" DisplayMemberPath="ProductID" FontSize="40"></ListBox>
-        <ListBox Grid.Column="2" Grid.Row="1" Grid.RowSpan="15" ItemsSource="{Binding list}" DisplayMemberPath="Price" FontSize="40"></ListBox>
-        <ListBox Grid.Column="3" Grid.Row="1" Grid.RowSpan="15" ItemsSource="{Binding list}" DisplayMemberPath="Quantity" FontSize="40"></ListBox>
+        <DataGrid ItemsSource="{Binding list}" x:Name="totalProducts" Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="3" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding ProductID}" Header="Product ID" Width="200" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding ProductName}" Header="Name" Width="200" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Price}" Header="Price" Width="200" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Quantity}" Header="Quantity" Width="200" IsReadOnly="True"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

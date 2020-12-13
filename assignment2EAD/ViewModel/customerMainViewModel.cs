@@ -1,5 +1,6 @@
 ﻿using assignment2EAD.commands;
 using assignment2EAD.Model;
+using assignment2EAD.View;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -39,6 +40,10 @@ namespace assignment2EAD.ViewModel
                 {
                     MessageBox.Show("Welcome User");
                     allow = true;
+                    addToCartWindow w = new addToCartWindow();
+                    w.Show();
+                    
+                    
                 }
             }
             if(allow == false)

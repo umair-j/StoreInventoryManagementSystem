@@ -1,4 +1,5 @@
-﻿using System;
+﻿using assignment2EAD.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -20,6 +21,12 @@ namespace assignment2EAD.View
         public addToCartWindow()
         {
             InitializeComponent();
+            this.DataContext = new cartViewModel();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

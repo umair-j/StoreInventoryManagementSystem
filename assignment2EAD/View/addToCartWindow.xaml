@@ -26,17 +26,33 @@
 
         <WrapPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical">
             <Label Content="SALE" FontSize="40" FontWeight="Bold"></Label>
-            <Button Content="LOGOUT" FontSize="20" HorizontalAlignment="Center" Height="30" Width="80"></Button>
+            <Button Content="LOGOUT" FontSize="20" HorizontalAlignment="Center" Height="30" Width="80" Click="Button_Click"></Button>
         </WrapPanel>
-        <WrapPanel Grid.Row="0" Grid.Column="3" Orientation="Vertical" Margin="10">
+        <WrapPanel Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Orientation="Vertical" Margin="10">
             <Label Content="Item ID" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-            <TextBox FontSize="20" HorizontalAlignment="Center" Height="30" MinWidth="120" VerticalAlignment="Center"></TextBox>
+            <TextBox Text="{Binding itemID}" FontSize="20" HorizontalAlignment="Center" Height="30" Width="120" VerticalAlignment="Center"></TextBox>
         </WrapPanel>
-        <WrapPanel Grid.Row="0" Grid.Column="4" Orientation="Vertical" Margin="10">
+        <WrapPanel Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" Orientation="Vertical" Margin="10">
             <Label Content="Quantity" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-            <TextBox FontSize="20" HorizontalAlignment="Center" Height="30" MinWidth="120" VerticalAlignment="Center"></TextBox>
+            <TextBox Text="{Binding itemQuantity}" FontSize="20" HorizontalAlignment="Center" Height="30" Width="120" VerticalAlignment="Center"></TextBox>
         </WrapPanel>
-        <Button Content="Add" Height="40" Width="80" FontSize="20" Grid.Row="0" Grid.Column="6"></Button>
-        <Button Content="Finish" Height="40" Width="80" FontSize="20" Grid.Row="0" Grid.Column="7"></Button>
+        <Button Command="{Binding addCommand}" Content="Add" Height="40" Width="80" FontSize="20" Grid.Row="0" Grid.Column="6"></Button>
+        <Button Command="{Binding finishCommand}" Content="Finish" Height="40" Width="80" FontSize="20" Grid.Row="0" Grid.Column="7"></Button>
+        <DataGrid ItemsSource="{Binding totalList}" x:Name="totalProducts" Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="3" AutoGenerateColumns="False">
+            <DataGrid.Columns >
+                <DataGridTextColumn Binding="{Binding ProductID}" Header="Product ID" Width="100" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding ProductName}" Header="Name" Width="100" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Price}" Header="Price" Width="100" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Quantity}" Header="Quantity" Width="100" IsReadOnly="True"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid ItemsSource="{Binding addedList}" x:Name="addedProducts" Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="3" Grid.Column="4"  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding ProductID}" Header="Product ID" MinWidth="100" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding ProductName}" Header="Name" MinWidth="100" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Price}" Header="Price" MinWidth="100" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Quantity}" Header="Quantity" MinWidth="100" IsReadOnly="True"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
