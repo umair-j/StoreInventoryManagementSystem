@@ -39,24 +39,27 @@ namespace assignment2EAD.ViewModel
         //function for signin button
         public void signin(object obj)
         {
+            //list = service.getAllCustomers();
             bool allow = false;
             //run through all of list to match details
             foreach (customer cstmr in list)
             {
-                if (cstmr.Username == Username1 && cstmr.Password==Password1)
-                {
-                    MessageBox.Show("Welcome User");
+                if (cstmr.Username.Equals(Username1) && cstmr.Password.Equals(Password1))
+                {              
                     allow = true;
-                    addToCartWindow w = new addToCartWindow();
-                    //if matched then open next window
-                    w.Show();
-                    
-                    
                 }
             }
             if(allow == false)
             {
                 MessageBox.Show("access Denied");
+            }
+            else
+            {
+                MessageBox.Show("Welcome User");
+                
+                addToCartWindow w = new addToCartWindow();
+                //if matched then open next window
+                w.Show();
             }
         }
         //function to enable/disable signin button

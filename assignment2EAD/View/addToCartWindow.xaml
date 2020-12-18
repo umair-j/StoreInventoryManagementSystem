@@ -26,18 +26,18 @@
 
         <WrapPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical">
             <Label Content="SALE" FontSize="40" FontWeight="Bold"></Label>
-            <Button Content="LOGOUT" FontSize="20" HorizontalAlignment="Center" Height="30" Width="80" Click="Button_Click"></Button>
+            <Button Content="LOGOUT" FontSize="20" HorizontalAlignment="Center" Height="30" Width="80" Click="Button_Click" ></Button>
         </WrapPanel>
         <WrapPanel Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Orientation="Vertical" Margin="10">
             <Label Content="Item ID" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-            <TextBox Text="{Binding itemID}" FontSize="20" HorizontalAlignment="Center" Height="30" Width="120" VerticalAlignment="Center"></TextBox>
+            <TextBox Text="{Binding itemID, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" FontSize="20" HorizontalAlignment="Center" Height="30" Width="120" VerticalAlignment="Center"></TextBox>
         </WrapPanel>
         <WrapPanel Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" Orientation="Vertical" Margin="10">
             <Label Content="Quantity" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
-            <TextBox Text="{Binding itemQuantity}" FontSize="20" HorizontalAlignment="Center" Height="30" Width="120" VerticalAlignment="Center"></TextBox>
+            <TextBox Text="{Binding itemQuantity, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" FontSize="20" HorizontalAlignment="Center" Height="30" Width="120" VerticalAlignment="Center"></TextBox>
         </WrapPanel>
-        <Button Command="{Binding addCommand}" Content="Add" Height="40" Width="80" FontSize="20" Grid.Row="0" Grid.Column="6"></Button>
-        <Button Command="{Binding finishCommand}" Content="Finish" Height="40" Width="80" FontSize="20" Grid.Row="0" Grid.Column="7"></Button>
+        <Button Name="addButton" Command="{Binding addCommand}" Content="Add" Height="40" Width="80" FontSize="20" Grid.Row="0" Grid.Column="6" ></Button>
+        <Button Name="finishbutton" Command="{Binding finishCommand}" Content="Finish" Height="40" Width="80" FontSize="20" Grid.Row="0" Grid.Column="7" Click="finishbutton_Click"></Button>
         <DataGrid ItemsSource="{Binding totalList}" x:Name="totalProducts" Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="3" AutoGenerateColumns="False">
             <DataGrid.Columns >
                 <DataGridTextColumn Binding="{Binding ProductID}" Header="Product ID" Width="100" IsReadOnly="True"></DataGridTextColumn>

@@ -78,5 +78,20 @@ namespace assignment2EAD.Model
             //closing connection
             con.Close();
         }
+        public void updateProduct(product p)
+        {
+            //setting up connection with database
+            string connString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            SqlConnection con = new SqlConnection(connString);
+            //initializing database query
+            string query = $"UPDATE PRODUCT SET QUANTITY ='{p.Quantity}' WHERE ID = '{p.ProductID}' AND NAME = '{p.ProductName}'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            //opening connection
+            con.Open();
+            //executing query
+            cmd.ExecuteNonQuery();
+            
+            
+        }
     }
 }

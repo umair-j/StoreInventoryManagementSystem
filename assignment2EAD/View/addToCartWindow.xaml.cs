@@ -24,6 +24,13 @@ namespace assignment2EAD.View
             this.DataContext = new cartViewModel();
         }
 
+        private void finishbutton_Click(object sender, RoutedEventArgs e)
+        {
+            checkout c = new checkout(this);
+            this.Close();
+            c.Show();
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

@@ -1,5 +1,6 @@
 ﻿using assignment2EAD.commands;
 using assignment2EAD.Model;
+using assignment2EAD.View;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -51,30 +52,10 @@ namespace assignment2EAD.ViewModel
         //function to call after finish button is clicked
         public void finish(object obj)
         {   
-            //initializing list
-            ObservableCollection<product> list = new ObservableCollection<product>();
-            foreach(product p in totalList)
+            foreach(product p in addedList)
             {
-                foreach(product q in addedList)
-                {
-                    //checking if quantity is enough in inventory 
-                    if(q == p)
-                    {
-                        
-                        if (p.Quantity-q.Quantity > 0)
-                        {
-                            p.Quantity -= q.Quantity;
-                            list.Add(q);
-                        }
-                    }
-                }
+                totalBill += p.Price * p.Quantity;
             }
-            foreach(product p in list)
-            {
-
-                MessageBox.Show(p.ProductName); 
-            }
-
         }
         //function to enable/disable add button
         public bool canAdd(object obj)
@@ -94,16 +75,38 @@ namespace assignment2EAD.ViewModel
         //function to add product to list
         public void add(object obj)
         {
+            totalList = service.getAllProducts();
             foreach(product p in totalList)
-            {
+            { 
+                bool ret = false;
                 //check if quantity in inventory is enough to be added
-                if(p.ProductID==itemID && p.Quantity >= itemQuantity)
+                if (p.ProductID == itemID && p.Quantity >= itemQuantity)
                 {
-                    //p.Quantity -= itemQuantity;
-                    //add to list
-                    addedList.Add(p);
+                    foreach (product z in addedList)
+                    {
+                        if (z.ProductID.Equals(itemID))
+                        {
+                            MessageBox.Show("Item already added");
+                            ret = true;
+                        }
+                    }
+                    if (ret == false)
+                    {
+                        p.Quantity = p.Quantity - itemQuantity;
+                        //update to database
+                        service.updateProduct(p);
+                        product q = new product();
+                        q = p;
+                        q.Quantity = itemQuantity;
+                        //add bought product to list
+                        addedList.Add(q);
+                        totalBill += q.Price * q.Quantity;
+                        itemID = "";
+
+                    }
                 }
             }
         }
+        public int totalBill { get; set; }
     }
 }

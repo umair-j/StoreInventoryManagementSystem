@@ -14,7 +14,7 @@ namespace assignment2EAD.Model
         //method to return list of all customers
         public ObservableCollection<customer> getAllCustomers()
         {
-            //load();
+            load();
             return customerList;
         }
         //default constructor
@@ -39,6 +39,7 @@ namespace assignment2EAD.Model
         }
          public void load()
          {
+            ObservableCollection<customer> customerList1 = new ObservableCollection<customer>();
             //setting up connection with database
              string connString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
              SqlConnection con = new SqlConnection(connString);
@@ -51,12 +52,13 @@ namespace assignment2EAD.Model
             while (dr.Read())
              {
                  customer c = new customer();
-                 c.Username = dr.GetValue(2) as string;
-                 c.Password = dr.GetValue(1) as string;
+                 c.Username = dr.GetValue(1) as string;
+                 c.Password = dr.GetValue(2) as string;
                  c.Phonenumber= (long)dr.GetValue(0);
 
-                 customerList.Add(c);
+                 customerList1.Add(c);
              }
+            customerList = customerList1;
             //closing connection
              con.Close();
          }

@@ -35,7 +35,7 @@
         </WrapPanel>
         <WrapPanel Grid.Row="4" Grid.Column="0">
             <Label Content="Password   " FontSize="20" VerticalAlignment="Center"></Label>
-            <TextBox Text="{Binding Password1}" FontSize="20" VerticalAlignment="Center" MinWidth="150"></TextBox>
+            <TextBox Text="{Binding Password1, UpdateSourceTrigger=PropertyChanged}" FontSize="20" VerticalAlignment="Center" MinWidth="150"></TextBox>
         </WrapPanel>
         <WrapPanel Grid.Row="4" Grid.Column="1">
             <Label Content="Password   " FontSize="20" VerticalAlignment="Center"></Label>
@@ -43,7 +43,7 @@
         </WrapPanel>
         <WrapPanel Grid.Row="5" Grid.Column="1">
             <Label Content="Phone NO " FontSize="20" VerticalAlignment="Center"></Label>
-            <TextBox Text="{Binding PhoneNumber}" FontSize="20" VerticalAlignment="Center" MinWidth="155"></TextBox>
+            <TextBox Text="{Binding PhoneNumber, UpdateSourceTrigger=PropertyChanged}" FontSize="20" VerticalAlignment="Center" MinWidth="155"></TextBox>
         </WrapPanel>
         <Button Command="{Binding signInCommand}" Grid.Row="7" Grid.Column="0" Width="150" Height="35" Content="LOGIN" FontSize="15" FontWeight="Bold"></Button>
         <Button Command="{Binding signUpCommand}" Grid.Row="7" Grid.Column="1" Width="150" Height="35" Content="SIGNUP" FontSize="15" FontWeight="Bold"></Button>
